@@ -1,0 +1,1 @@
+print('Üdv a fedélzeten')

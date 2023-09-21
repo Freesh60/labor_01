@@ -5,7 +5,10 @@ kor = int(input("Hány éves vagy?"))
 gyerek = input("Van 3 gyereked és nő vagy (igen/nem)?")
 brutto = int(input("Mennyi a bruttó jövedelmed?"))
 if kor <= 25 or gyerek in ["igen", "Igen", "i", "I"]:
-    szja = 0
+    if brutto > 500000:
+        szja = (brutto-500000) * 0.15
+    else:
+        szja = 0
 else:
     szja = brutto * 0.15
 

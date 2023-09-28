@@ -36,7 +36,7 @@ def main():
             empty_image = Image.new("RGB", (int(label_width), int(label_height)))
             return ImageTk.PhotoImage(empty_image)
 
-    # Hálózati és lokális nyomtatók listázása
+    # Hálózati, lokális nyomtatók listázása
     def list_network_printers():
         printer_list = []
 

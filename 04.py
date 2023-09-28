@@ -1,41 +1,39 @@
 #számológép
-
 def adatkeres(tipus):
-    szam = ""
+    valasz = ""
     if tipus == "sz":
-        szam = input("Kérem az első számot: ")
-        while not szam.isnumeric():
+        valasz = input("Kérem az első számot: ")
+        while not valasz.isnumeric():
             print("Rossz érték!!!!")
-            szam = input("Kérem az első számot: ")
-        szam = int(szam)
+            valasz = input("Kérem az első számot: ")
+        valasz = int(valasz)
     elif tipus == "m":
-        pass
-    return szam
+        valasz = input("Milyen művelet legyen(+,-,*,/): ")
+        while valasz not in {"+", "-", "*", "/"}:
+            print("Nem jó a műveleti jel!!!!")
+            valasz = input("Milyen művelet legyen(+,-,*,/): ")
+    return valasz
+def szamolas():
+    eredmeny = 0
+    if muvelet == "+":
+        eredmeny = szam1 + szam2
+    elif muvelet == "-":
+        eredmeny = szam1 - szam2
+    elif muvelet == "*":
+        eredmeny = szam1 * szam2
+    elif muvelet == "/":
+        eredmeny = szam1 / szam2
+    return eredmeny
 
-#program indítás
+#programindítás
 print("Számológép")
 szam1 = adatkeres("sz")
-
-muvelet = input("Milyen művelet legyen(+,-,*,/): ")
-while muvelet not in {"+","-","*","/"}:
-    print("Nem jó a műveleti jel!!!!")
-    muvelet = input("Milyen művelet legyen(+,-,*,/): ")
-
+muvelet = adatkeres("m")
 szam2 = adatkeres("sz")
-
-eredmeny = 0
-if muvelet == "+":
-    eredmeny = szam1 + szam2
-elif muvelet == "-":
-    eredmeny = szam1 - szam2
-elif muvelet == "*":
-    eredmeny = szam1 * szam2
-elif muvelet == "/":
-    eredmeny = szam1 / szam2
+eredmenye = szamolas()
 
 print(str (szam1).rjust(50))
 print(muvelet, end="")
 print(str (szam2).rjust(49))
 print("_".rjust(50, "_"))
-print(str(eredmeny).rjust(50))
-
+print(str(eredmenye).rjust(50))

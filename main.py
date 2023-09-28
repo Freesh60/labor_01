@@ -36,6 +36,7 @@ def main():
             empty_image = Image.new("RGB", (int(label_width), int(label_height)))
             return ImageTk.PhotoImage(empty_image)
 
+    # Hálózati,lokális nyomtatók listázása
     def list_network_printers():
         printer_list = []
 
@@ -48,6 +49,7 @@ def main():
 
         return printer_list
 
+    # Az aktuális mintakép elkészítése
     def create_label():
         nonlocal sample_image
 
@@ -63,6 +65,7 @@ def main():
         sample_image_label.config(image=sample_image)
         sample_image_label.image = sample_image
 
+    # Nyomtatás
     def print_label():
         selected_printer = printer_combo.get()
         if not selected_printer:
